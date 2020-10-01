@@ -1,0 +1,98 @@
+
+syntax parsers:
+a program that reads your code and determines what it does and if its grammar is valid.
+
+your code => (compiler | syntax parsers) => computer instructions
+
+
+lexical environments:
+where something sits physically in the code you write. 'Lexical' means having to do with
+grammar or words. a lexical environment exists in programming languages which, WHERE you write
+something is important.
+
+if the variable is written inside function => it is only visible inside that function not globally
+
+
+execution contexts:
+a wrapper to help manage the code that is running. there lots of lexical environments. which one is
+currently running is managed via execution contexts. it can contain things beyond what you have written
+in your code.
+
+
+name/value pair:
+a name which maps to a unique value, the name may be defined more than once, but only can have one
+value in any given CONTEXT. that value may be more name/value pairs.
+
+Address = '100 Main St.'
+
+
+object:
+a collection of name/value pairs => the simplest definition when talking about JavaScript.
+objects can nest other objects in JavaScript.
+
+{ name: { name: {name: value, name: value } }, name: value }
+{ Address: { street: 'main', number: 100, apartment: { floor: 3, number: 301 } } }
+
+
+Global Object:
+the base execution context in JavaScript is Global context.
+the global execution context creates "Global Object" and a variable called "this" by default.
+
+window => this
+
+in JavaScript global means Not inside a function.
+
+the execution context: 'Creation' and 'Hoisting'
+1: creation phase => global object + this + outer environment => sets up memory space for => execution of code line by line
+                                                                 variables and functions,
+                                                                 so they are available in memory
+                                                                 "Hoisting"
+
+in Hoisting phase the whole function is put into memory, but for variables only name of it is saved in memory,
+it gives is a placeholder, called 'undefined' which means it is a value that was initially set by JavaScript
+
+2:execution phase: runs your code line by line from top to bottom
+
+
+Single Threaded, Synchronous Execution:
+
+Single Threaded => One command is being executed at a time
+Synchronous => executing one at a time and in order
+
+JavaScript behaves in a single-threaded and synchronous manner.
+
+
+Function Invocation:
+running a function, calling a function by using ()
+
+Execution Stack:
+list of commands to be run on top of each other, which ever is currently on top now, will be run next.
+
+Variable Environment:
+where the variables live and how they relate to each other in memory.
+value of a variable changes based on the location it's defined (it's scope)
+
+Scope:
+where a variable is available in your code and if its truly the same variable or a new copy
+
+Scope Chain:
+local Scope (if there is local variable defined) ==> outer environment (outside the function scope, if local is not available)
+
+
+"let" keyword:
+"block scoping"
+variables defined by let are defined inside a block {}
+these variables can't be called before they are executed, even though they are saved inside memory
+
+
+Asynchronous:
+more than one at a time
+
+Asynchronous Callback:
+when you set a code and the other part of code (Callback) runs when the process is finished
+
+the browser:
+Rending Engine <==> JavaScript Engine <==> Http Requests
+
+when the execution stack becomes empty JavaScript starts to process the Event Queue (which is a list of all the events that happen inside a browser: i.e: click, blur, http request,...)
+the event gets processed if we have a function that is defined for handeling such event (i.e: clickHandler())

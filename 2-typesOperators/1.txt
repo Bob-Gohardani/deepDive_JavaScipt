@@ -1,0 +1,24 @@
+JavaScript Types
+
+Dynamic Typing: 
+you don't tell the engine what type of data a variable holds, it figures it out while your code is running
+it's all figured out while your code is running.
+variables can hold different types of values because its all figured out during execution.
+
+
+Primitive Types:
+a Primitive type is a type of data that represents a single value, which means it is NOT an object.
+
+undefined : represents a lack of value on a variable
+null: an empty variable
+boolean: true/false
+number: in JavaScript the float and integer values both are of type Number (by default a floating point number)
+string: sequence of character, both '' and "" acceptable
+symbol: used only in ES6
+
+
+Operators:
+a special function that is syntactycally (written) differently compared to other functions.
+generally, operators take two parameters and return one result.
+
+
