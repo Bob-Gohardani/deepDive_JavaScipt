@@ -1,6 +1,6 @@
 JavaScript Types
 
-Dynamic Typing: 
+Dynamic Typing:
 you don't tell the engine what type of data a variable holds, it figures it out while your code is running
 it's all figured out while your code is running.
 variables can hold different types of values because its all figured out during execution.
@@ -11,14 +11,24 @@ a Primitive type is a type of data that represents a single value, which means i
 
 undefined : represents a lack of value on a variable
 null: an empty variable
-boolean: true/false
+Boolean: true/false
 number: in JavaScript the float and integer values both are of type Number (by default a floating point number)
 string: sequence of character, both '' and "" acceptable
 symbol: used only in ES6
 
 
 Operators:
-a special function that is syntactycally (written) differently compared to other functions.
+a special function that is syntactically (written) differently compared to other functions.
 generally, operators take two parameters and return one result.
 
+operator precedence:
+which operator function gets called first, functions are called in order of precedence
 
+associativity:
+what order operator functions get called in:
+left-to-right or right-to-left
+
+Coercion:
+converting a value from one type to another. this happens often in JavaScript because its dynamically typed.
+when string is added to a numerical type, the numeric is converted to string
+1+'2' => '1'+'2' => '12'

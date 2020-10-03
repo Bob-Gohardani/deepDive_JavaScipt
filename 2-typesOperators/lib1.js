@@ -1,0 +1,1 @@
+let libName = 'library1';
