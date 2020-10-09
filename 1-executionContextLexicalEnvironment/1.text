@@ -105,6 +105,11 @@ the event gets processed if we have a function that is defined for handling such
 
 WebAssembly:
 the JavaScript compiles down to WA, to run the code in the browser.
-WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. 
+WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine.
 Wasm is designed as a portable compilation target for programming languages, enabling deployment
 on the web for client and server applications.
+
+
+Context vs Scope:
+Scope is a function based thing, means what is the variable access of a function.
+Context is object based, what is value of 'this', related to object that called it. 

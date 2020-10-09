@@ -208,12 +208,54 @@ console.log(c) // same as
 // equals operator sets up new memory space (new address)
 c = { greeting: 'Howdy' }
 
-console.log(c); // Howdy
-console.log(d); // Salam => because now c,d point to different spaces in memory
+console.log(c) // Howdy
+console.log(d) // Salam => because now c,d point to different spaces in memory
 
 
 var country = () => {
-  console.log(arguments);
+  console.log(arguments)
 }
 
-country();  // returns {}
+country()  // returns {}
+
+
+fuction sayMyname() {
+  var a = 'a'
+  return function findName() {
+    var b = 'b'
+    return function printName() {
+      var c = 'c'
+      return 'Babak'
+    }
+  }
+}
+
+sayMyname()()()  // ==> Babak
+
+
+// DO NOT DO THIS!!!
+function weird() {
+  height = 50  // leakage of global environment
+  return height
+}
+
+weird()  // => 50
+
+
+// since var secret is defined in global scope (outside the functional scope we can access it here)
+if (5 > 4) {
+  var secret = 'secret'
+  let secret2 = 'secret2'
+}
+
+console.log(secret);
+console.log(secret2);  // this will throw an error because let/const have block scope
+
+// currying
+function multiply(a, b) {
+  return a*b
+}
+
+let multiplyByTwo = multiply.bind(this, 2)
+
+console.log(multiplyByTwo(4)) // 8
