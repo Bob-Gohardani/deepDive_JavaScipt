@@ -1,14 +1,14 @@
 console.log(this);
-// in this context "this" is the current browser winodw
+// in this context "this" is the current browser window
 // each tab in browser has it's own "window" global object.
 
 console.log(window);
 
 // Hoisting
-b();  // will work properlly
-console.log(a);  // will be 'undefined' but won't throw an error, since variable name is avaiable
+b();  // will work properly
+console.log(a);  // will be 'undefined' but won't throw an error, since variable name is available
 
-// both variable a and function b are avaiable inside the global variable "window"
+// both variable a and function b are available inside the global variable "window"
 var a = 'Hello World!';
 
 function b() {
@@ -31,7 +31,7 @@ d = undefined;
 console.log(d);
 
 
-
+// Function Declaration
 function bb() {
   console.log("ran b");
 }
@@ -81,7 +81,7 @@ Global execution context => myVar = 1
 
 */
 
-// both first and second function sit on top of global environment, lexicaly
+// both first and second function sit on top of global environment, lexically
 function second() {
   console.log('second: ', myVar1);  // will give back same value as global 'myVar1'
 }
@@ -102,12 +102,15 @@ var myVar1 = 1;
 first();
 
 // third();   JS will throw a "uncaught reference" error since third() is not available on the global scope
- 
+
 
 if (10 > 8) {
   console.log(t);  // this will throw an error, as variables defined by 'let' aren't allowed to be called until they are executed.
 
   let t = 'Table';
 
-  console.log(t); 
+  console.log(t);
 }
+
+
+

@@ -56,7 +56,10 @@ greet(guy1)
 guy1.gender = "M"
 
 // we create objects on the fly
-greet({ firstname: 'Mary', lastname: 'Doe' })
+greet({
+  firstname: 'Mary',
+  lastname: 'Doe'
+})
 
 /*
 NameSpace:
@@ -71,14 +74,14 @@ let english = {}
 let spanish = {}
 
 // english.greeting.greet  => second object literal throws an uncaught TypeError
-english.greeting = {};
-english.greeting.basic = 'Howdy';
+english.greeting = {}
+english.greeting.basic = 'Howdy'
 
 // no NameSpace collision
 english.word = 'Hello'
 spanish.word = 'Hola'
 
-console.log(english);
+console.log(english)
 
 /*
 JSON is inspired by object literal,
@@ -94,10 +97,10 @@ but its not exactly the same thing and has some differences compared to JS objec
 */
 
 // object literal to JSON
-console.log(JSON.stringify(english));
+console.log(JSON.stringify(english))
 
 // JSON to object literal
-console.log(JSON.parse('{"greeting":{"basic":"Howdy"},"word":"Hello"}'));
+console.log(JSON.parse('{"greeting":{"basic":"Howdy"},"word":"Hello"}'))
 
 /*
 First Class Function:
@@ -112,9 +115,105 @@ function => code, name (typical function stuff)
 */
 
 const greetMe = () => {
-  console.log('Hi');
+  console.log('Hi')
 }
 
 // adding property to object!!
-greetMe.language = 'english';
-console.log(greetMe.language);
+greetMe.language = 'english'
+console.log(greetMe.language)
+
+/*
+Expression:
+a unit of code that results in a value, it doesnt have to save to a variable.
+
+an statement does some work (i.e: if statement) but an expression results in a value
+*/
+
+// both of these are valid expressions
+let a = 3
+1 + 2;
+
+if (a === 3) {
+  // pass
+}
+
+f_statement();  // works properly, because its hoisted
+
+// function statement, doesn't return any value
+function f_statement() {
+  console.log('Hi')
+}
+
+/*
+f_expression();  // return Uncaught TypeError: undefined is not a function
+*/
+
+// function expression, saved in an object (also called anonymous function, the function itself has no name)
+const f_expression = () => {
+  console.log('Hi')
+}
+
+function log(a) {
+  a(); // invoke the given function
+}
+
+// function that can be passed around => "first class function"
+log(() => 'hello!')
+
+/*
+
+Mutate: to change something
+Immutable: means it can't be changed
+
+by value:
+let a = primitive  => points to a value in memory
+let b = a => copies the value to another place in memory
+a, b have different memory points
+
+by reference:
+let a = object  => points to a value in memory
+let b = a  => points to same value in memory as a
+
+primitives => primitives interact by value
+objects => all objects interact by reference
+*/
+
+let aa = 3
+let b
+b = aa
+
+a = 2
+console.log(aa)  // 2
+console.log(b)  // still 3
+
+
+let c = { greeting: 'hi' }
+let d
+
+d = c
+c.greeting = 'hola'
+
+console.log(c) // hola => mutate the object
+console.log(d) // hola, changes to same value as c
+
+// passed by reference (even as parameters)
+const changeGreeting = (obj) => {
+  obj.greeting = 'Salam'
+}
+
+changeGreeting(d)
+console.log(d)  // Salam => mutated inside the function
+console.log(c) // same as
+
+// equals operator sets up new memory space (new address)
+c = { greeting: 'Howdy' }
+
+console.log(c); // Howdy
+console.log(d); // Salam => because now c,d point to different spaces in memory
+
+
+var country = () => {
+  console.log(arguments);
+}
+
+country();  // returns {}

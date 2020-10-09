@@ -1,3 +1,5 @@
+V8 Engine:
+uses both Compiler and Interpreter (JIT, just in time) engine.
 
 syntax parsers:
 a program that reads your code and determines what it does and if its grammar is valid.
@@ -18,7 +20,6 @@ a wrapper to help manage the code that is running. there lots of lexical environ
 currently running is managed via execution contexts. it can contain things beyond what you have written
 in your code.
 
-
 name/value pair:
 a name which maps to a unique value, the name may be defined more than once, but only can have one
 value in any given CONTEXT. that value may be more name/value pairs.
@@ -26,7 +27,7 @@ value in any given CONTEXT. that value may be more name/value pairs.
 Address = '100 Main St.'
 
 
-object:
+Object:
 a collection of name/value pairs => the simplest definition when talking about JavaScript.
 objects can nest other objects in JavaScript.
 
@@ -35,11 +36,12 @@ objects can nest other objects in JavaScript.
 
 
 Global Object:
-the base execution context in JavaScript is Global context.
+the "base execution context" in JavaScript is "Global context".
 the global execution context creates "Global Object" and a variable called "this" by default.
 
 window => this
 
+at base global level : window === this  => true
 in JavaScript global means Not inside a function.
 
 the execution context: 'Creation' and 'Hoisting'
@@ -48,8 +50,11 @@ the execution context: 'Creation' and 'Hoisting'
                                                                  so they are available in memory
                                                                  "Hoisting"
 
+Hoisting:
 in Hoisting phase the whole function is put into memory, but for variables only name of it is saved in memory,
 it gives is a placeholder, called 'undefined' which means it is a value that was initially set by JavaScript
+
+** 'let' and 'const' are NOT hoisted.
 
 2:execution phase: runs your code line by line from top to bottom
 
@@ -95,4 +100,11 @@ the browser:
 Rending Engine <==> JavaScript Engine <==> Http Requests
 
 when the execution stack becomes empty JavaScript starts to process the Event Queue (which is a list of all the events that happen inside a browser: i.e: click, blur, http request,...)
-the event gets processed if we have a function that is defined for handeling such event (i.e: clickHandler())
+the event gets processed if we have a function that is defined for handling such event (i.e: clickHandler())
+
+
+WebAssembly:
+the JavaScript compiles down to WA, to run the code in the browser.
+WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. 
+Wasm is designed as a portable compilation target for programming languages, enabling deployment
+on the web for client and server applications.
