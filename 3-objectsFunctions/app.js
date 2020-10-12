@@ -107,7 +107,7 @@ First Class Function:
 everything you can do with other types, you can do with functions. assign them to variables, pass them around,
 create them on the fly.
 
-** in JS Function are Objects.
+** in JavaScript Function are Objects **
 
 function => primitive, object, function (property)
 function => code, name (typical function stuff)
@@ -153,8 +153,8 @@ const f_expression = () => {
   console.log('Hi')
 }
 
-function log(a) {
-  a(); // invoke the given function
+function log(arg) {
+  arg(); // invoke the given function
 }
 
 // function that can be passed around => "first class function"
@@ -219,7 +219,7 @@ var country = () => {
 country()  // returns {}
 
 
-fuction sayMyname() {
+function sayMyname() {
   var a = 'a'
   return function findName() {
     var b = 'b'
@@ -253,9 +253,37 @@ console.log(secret2);  // this will throw an error because let/const have block 
 
 // currying
 function multiply(a, b) {
-  return a*b
+  return a * b
 }
 
 let multiplyByTwo = multiply.bind(this, 2)
 
 console.log(multiplyByTwo(4)) // 8
+
+
+// Function Constructor : another way of creating functions
+const four = new Function('return 4')
+four()
+
+
+for (let i = 0; i < 5; i++) {
+  // DO NOT DO THIS, this will re-define the same function every iteration, 
+  // always define constants outside a loop
+  const a = () => {
+    // do something
+  }
+
+  a()
+}
+
+
+const myFunc1 = () => {
+  return nonExistingParam
+}
+
+const myFunc2 = (someParam) => {
+  return someParam
+}
+
+myFunc1()  // returns an Error, breaks the function
+myFunc2() // returns 'undefined'

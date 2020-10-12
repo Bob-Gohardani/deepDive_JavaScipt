@@ -11,7 +11,7 @@ console.log(a);
 
 3 + 4;  // this is in-fix notation, which means the oprator sits between two arguments instead of +(3,4);
 
-console.log(4-3);  // - is another operator
+console.log(4 - 3);  // - is another operator
 
 let aa = 2, b = 3, c = 4;
 a = b = c;
@@ -21,7 +21,7 @@ console.log(b);
 console.log(c);
 // they are equal to 4, because of right-to-left associativity for assignment(=) operator
 
-console.log(aa=b);  // returns 4
+console.log(aa = b);  // returns 4
 
 var sameType = 'Hello' + 'World'
 console.log(sameType);
@@ -47,7 +47,7 @@ console.log("" === false); // false
 
 /*
 
-== converts two arguments to same type then compares them
+== converts two arguments to same type then compares them (Coercion)
 === compares values without converting the data types
 
 !== strict inequality
@@ -64,9 +64,11 @@ Boolean(0)  // false
 
 var cc;
 
-if(cc || cc === 0) { // return is false since it is undefined
+if (cc || cc === 0) { // return is false since it is undefined
   console.log("something is there");
 }
+
+NaN === NaN  // false
 
 // in JavaScript the if statement converts the given argument into a Boolean, therefore its result is always true/false
 
@@ -83,7 +85,7 @@ xx('apple');  // "apple Hi!"
 xx();
 
 // we can give default value to function arguments
-const zz = (name="MyName") => {
+const zz = (name = "MyName") => {
   console.log(name + " Huh!");
 }
 
@@ -100,3 +102,20 @@ ab == ab || 'name' // since || comes before ==, therefore we choose 'name' and r
 
 // Library Conflicts 
 console.log(libName);
+
+
+// these two values below are same
+var arr_array = ['1', '2', '3']
+
+var arr_object = {
+  0: '1',
+  1: '2',
+  2: '3'
+}
+
+console.log(typeof []);   // returns array
+
+Array.isArray(arr_array)  // true
+Array.isArray({})  // false
+
+

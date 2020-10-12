@@ -9,6 +9,7 @@ variables can hold different types of values because its all figured out during 
 Primitive Types:
 a Primitive type is a type of data that represents a single value, which means it is NOT an object.
 
+
 undefined : represents a lack of value on a variable
 null: an empty variable
 Boolean: true/false
@@ -16,6 +17,7 @@ number: in JavaScript the float and integer values both are of type Number (by d
 string: sequence of character, both '' and "" acceptable
 symbol: used only in ES6
 
+array: arrays in JavaScript are objects
 
 Operators:
 a special function that is syntactically (written) differently compared to other functions.
@@ -32,3 +34,5 @@ Coercion:
 converting a value from one type to another. this happens often in JavaScript because its dynamically typed.
 when string is added to a numerical type, the numeric is converted to string
 1+'2' => '1'+'2' => '12'
+
+use === instead of == to prevent type Coercion
