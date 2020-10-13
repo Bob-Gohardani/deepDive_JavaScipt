@@ -69,7 +69,11 @@ const harry = new Wizard('Harry', 'Griffin');
 console.log(harry instanceof Wizard);
 console.log(harry.magicAttack());
 
+/*
+const merlin = new Wizard('Merlin', 'excalibur');
+const ogre = {...merlin};  // copy merlin to a new object
 
-
-
-
+// even though orge is copy of merlin, it doesn't have access to all of its properties
+console.log(ogre.__proto__);
+console.log(merlin.__proto__);
+*/
